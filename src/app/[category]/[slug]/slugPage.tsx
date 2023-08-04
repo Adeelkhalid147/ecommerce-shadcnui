@@ -1,17 +1,17 @@
 "use client";
 import SlugComponent from "@/components/slugComponent";
 import { Button } from "@/components/ui/button";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaHeart, FaMinus } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppSelector } from "../../store/hooks";
 import { useState } from "react"
-import { addToCart } from "@/app/store/features/cart";
+import AddToCartToast from "@/components/addToCartToast";
+
 
 const SlugPage = ({ params }: { params: { slug: string } }) => {
   const product = useAppSelector((state) => state.products);
   const slug = product.filter((val) => val.slug == params.slug);
-  const dispatch = useAppDispatch()
+  
   const [cartItem, setCartItem] = useState({
     id:slug[0].id,
     title:slug[0].title,
@@ -150,10 +150,11 @@ const SlugPage = ({ params }: { params: { slug: string } }) => {
               </div>
 
               {/* button add to card/buy now */}
-              <Button onClick={()=>dispatch(addToCart(cartItem))} className="group bg-myblackhead hover:bg-transparent text-mywhite hover:text-myblackhead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl botton-2 right-2">
+              {/* <Button onClick={()=>dispatch(addToCart(cartItem))} className="group bg-myblackhead hover:bg-transparent text-mywhite hover:text-myblackhead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl botton-2 right-2">
                 <AiOutlineShoppingCart className="mr-2 h-4 w-4 group-hover:text-myorange duration-300" />
                 Add to Cart
-              </Button>
+              </Button> */}
+              <AddToCartToast cartItem={cartItem}/>
             </div>
             <Button className="mt-3 group w-full bg-myblackhead hover:bg-transparent text-mywhite hover:text-myblackhead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl botton-2 right-2">
               <FaHeart className="mr-2 h-4 w-4 group-hover:text-myorange duration-300" />
