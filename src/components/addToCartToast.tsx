@@ -22,6 +22,7 @@ const AddToCartToast = ({ cartItem }: any) => {
     });
 
   return (
+    <>
     <div className="w-fit" onClick={() => dispatch(addToCart(cartItem))}>
       {/* <button onClick={notify}>Notify!</button> */}
       <Button
@@ -31,19 +32,21 @@ const AddToCartToast = ({ cartItem }: any) => {
         <AiOutlineShoppingCart className="mr-2 h-4 w-4 group-hover:text-myorange duration-300" />
         Add to Cart
       </Button>
-      <ToastContainer
-        position="top-center"
-        autoClose={2000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+     
     </div>
+     <ToastContainer
+     position="top-center"
+     autoClose={2000}
+     hideProgressBar={false}
+     newestOnTop={false}
+     closeOnClick
+     rtl={false}
+     pauseOnFocusLoss
+     draggable
+     pauseOnHover
+     theme="light"
+   />
+   </>
   );
 };
 
