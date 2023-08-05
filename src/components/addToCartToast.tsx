@@ -24,7 +24,7 @@ const AddToCartToast = ({ cartItem }: any) => {
   return (
     <>
     <div className="w-fit" onClick={() => dispatch(addToCart(cartItem))}>
-      {/* <button onClick={notify}>Notify!</button> */}
+      
       <Button
         onClick={notify}
         className="group bg-myblackhead hover:bg-transparent text-mywhite hover:text-myblackhead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl botton-2 right-2"
