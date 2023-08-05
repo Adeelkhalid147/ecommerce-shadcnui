@@ -98,8 +98,9 @@ const Footer = () => {
         
       </a>
       <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
-        © 2020 Ladies Fashion —
-        
+        <Link href={"https://github.com/Adeelkhalid147/ecommerce-shadcnui"}>
+        © 2020 Adeel Khalid —
+        </Link>
       </p>
       <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
         <a className="text-gray-500">
